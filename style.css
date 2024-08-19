@@ -1993,18 +1993,18 @@ font-weight: 700;
 
 
 .timeline-item:before {
-  top: -2% !important;
+  top: -3% !important;
   margin-top: -5px;
   padding-left: 15px;
-  right: calc(-100% - 56px);
+  right: calc(-70% - 60px);
 }
 
 
 .timeline-item:nth-child(even):before {
-  top: -2% !important;
+  top: -3% !important;
 
   text-align: right;
-  left: calc(100% - 56px);
+  left: calc(50% - 66px);
   padding-left: 0;
   padding-right: 15px;
 
