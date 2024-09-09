@@ -2077,13 +2077,16 @@ font-weight: 400;
 
 
 .footer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 3rem;
-
-  background-color: #000;
-
-  background-position: center;
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+    background-color: #000;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
 }
 
 .footer h3 {
