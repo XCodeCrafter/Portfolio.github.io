@@ -205,15 +205,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+// Initialize the canvas
+var canvas = document.getElementById('matrixCanvas'),
+    ctx = canvas.getContext('2d');
 
-const canvas = document.getElementById('matrixCanvas');
-const ctx = canvas.getContext('2d');
+// Define commonly used display dimensions
+const sizes = {
+  small: { width: 390, height: 844 },     // Typical smartphone size (e.g., iPhone 12)
+  medium: { width: 768, height: 1024 },   // Typical tablet size (e.g., iPad)
+};
 
-// Set initial canvas dimensions
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// Function to set canvas size based on screen width
+function setInitialCanvasSize() {
+  if (window.innerWidth <= sizes.small.width) {
+    // Small screens (e.g., smartphones)
+    canvas.width = sizes.small.width;
+    canvas.height = sizes.small.height;
+    fontSize = 10; // Default font size for small screens
+  } else if (window.innerWidth <= sizes.medium.width) {
+    // Medium screens (e.g., tablets)
+    canvas.width = sizes.medium.width;
+    canvas.height = sizes.medium.height;
+    fontSize = 14; // Slightly larger font for medium screens
+  } else {
+    // Large screens (e.g., desktops)
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    fontSize = Math.max(16, Math.floor(canvas.width / 100)); // Scale font for large screens
+  }
+  
+  // Set up columns and drops array based on initial size
+  columns = Math.floor(canvas.width / fontSize);
+  drops = Array(columns).fill(1); // Reset drops for new column count
+}
 
-// Define the text to display
+// Initial setup
+var fontSize = 10;
+var columns, drops;
+setInitialCanvasSize(); // Set size once on load
+
+// Custom text setup
 const customText = `G91
 D1
 G90
@@ -236,62 +267,27 @@ IF
 R602 
 GOTOF 
 ENDIF:`;
+const letters = customText.split(/\r?\n/); // Split by new line to create an array of lines
 
-// Set base font size
-let fontSize = window.innerWidth < 800 ? 10 : 14;
-let columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(1); // Initialize drops array
-
-// Function to draw matrix animation
-function drawMatrix() {
-  // Set background with slight opacity to create trailing effect
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+// Draw function
+function draw() {
+  ctx.fillStyle = 'rgba(0, 0, 0, .1)';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Set text color and font style
-  ctx.fillStyle = '#00FF00';
-  ctx.font = `${fontSize}px monospace`;
+  for (var i = 0; i < drops.length; i++) {
+    // Choose a random line from custom text
+    var text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillStyle = '#0f0';
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-  // Loop through drops
-  for (let i = 0; i < drops.length; i++) {
-    const text = customText.split('\n')[Math.floor(Math.random() * customText.split('\n').length)];
-    const x = i * fontSize;
-    const y = drops[i] * fontSize;
-
-    ctx.fillText(text, x, y);
-
-    // Reset drop position if it goes off-canvas
-    if (y > canvas.height && Math.random() > 0.975) {
+    // Reset or increment drop position
+    drops[i]++;
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
       drops[i] = 0;
-    } else {
-      drops[i]++;
     }
   }
 }
 
-// Animation interval for matrix effect
-const matrixInterval = setInterval(drawMatrix, 100);
+// Loop the animation
+setInterval(draw, 100);
 
-// Adjust canvas and font size on resize without disrupting animation
-window.addEventListener('resize', () => {
-  // Adjust font size for smaller screens
-  fontSize = window.innerWidth < 800 ? 10 : 14;
-
-  // Update canvas size
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  // Recalculate columns based on new width
-  const newColumns = Math.floor(canvas.width / fontSize);
-
-  // Adjust drops array to maintain continuity
-  if (newColumns > columns) {
-    // Add new drops if columns increase
-    drops.push(...Array(newColumns - columns).fill(1));
-  } else if (newColumns < columns) {
-    // Remove drops if columns decrease
-    drops.length = newColumns;
-  }
-
-  columns = newColumns; // Update columns count
-});
