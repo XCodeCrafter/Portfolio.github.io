@@ -269,10 +269,6 @@ window.addEventListener('resize', () => {
   drops.fill(1); // Reset drops
 });
 
-// Prevent default touch behavior to avoid scrolling
-window.addEventListener('touchmove', (event) => {
-  event.preventDefault();
-}, { passive: false });
 
 // Retain the state of the canvas on scroll
 window.addEventListener('scroll', (event) => {
