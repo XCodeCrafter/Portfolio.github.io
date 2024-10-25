@@ -1591,6 +1591,7 @@ footer p {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+  padding-bottom: 50px; /* Adjust the value for desired space */
 }
 
 .parallax::before {
@@ -2696,7 +2697,18 @@ z-index: 50;
 .green_h2b h2{
   padding: 1rem;
   margin: 1rem;
-  color: #06a254;
+  color: #8e44ad;
+  font-size: 2rem;
+  text-shadow: 1px 1px #f1f2f598;
+  text-transform: none;
+  text-align: left;
+}
+
+
+.green_h2 h2{
+  padding: 1rem;
+  margin: 1rem;
+  color: #337ab7;
   font-size: 2rem;
   text-shadow: 1px 1px #f1f2f598;
   text-transform: none;
@@ -2714,4 +2726,72 @@ z-index: 50;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Matrix canvas style */
+#matrixCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Places the canvas behind other content */
+  background-color: black;
+}
+
+.matrix-canvas {
+  margin-top: 50px; /* Adjust the value to your desired space */
+  display: block;    /* Ensure it occupies space correctly */
+}
+
+
+/* Adjustable top margin for sections */
+:root {
+  --content-top-offset: 100px; /* Change this value to adjust the top offset of content */
+}
+
+/* Main content styling */
+section {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  margin-top: var(--content-top-offset); /* Adjustable margin on top */
+}
+
+/* Example styles for the 'about' and 'experience' sections */
+.section__text__p1, .container, .experience-details-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+
+.shadow {
+    position: absolute;              /* Position it absolutely */
+    top: -30;                      /* Align to the bottom */
+    left: 0;                        /* Align to the left */
+    width: 100%;                    /* Full width */
+    height: 8rem;                  /* Fixed height */
+    background-color: #000;         /* Dark background color */
+    padding-bottom: 3rem;              /* Add padding to accommodate the border */
+    box-shadow: 0 0 20px rgba(47, 46, 46, 0.5); /* Shadow effect */
+    overflow: hidden;                 /* Hide overflow to keep the border contained */
+    z-index: 2;                     /* Ensure it's above other content */
+}
 
