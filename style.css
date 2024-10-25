@@ -2158,7 +2158,6 @@ font-weight: 700;
   box-shadow: rgb(44 88 141 / 25%) 0px 54px 55px, rgb(41 46 152 / 12%) 0px -12px 30px, rgb(39 22 118 / 12%) 0px 4px 6px, rgb(61 61 73 / 17%) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   width: 550px !important;
   flex-wrap: nowrap !important;
-  background: #000; /* Background color */
 }
 
 
@@ -2624,6 +2623,8 @@ z-index: 50;
     padding: 3rem;
     box-shadow: rgb(44 88 141 / 25%) 0px 54px 55px, rgb(41 46 152 / 12%) 0px -12px 30px, rgb(39 22 118 / 12%) 0px 4px 6px, rgb(61 61 73 / 17%) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     width: 1200px;
+    background: #000; /* Background color */
+
 }
 
 
