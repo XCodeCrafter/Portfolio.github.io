@@ -1,347 +1,46 @@
-/* GENERAL */
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 
-@import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
+    <link href="https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
 
-@import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
 
-* {
-  margin: 0;
-  padding: 0;
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
-  box-sizing: border-box;
-}
+      <!-- font awesome cdn link -->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-:root {
-  --background-color: linear-gradient(to bottom, #000000, #040404); /* Sky blue color */
 
-  --background_cont: #ccd1d2; /* Light background color */
-  --photo-border-radius: 50%; /* Adjustable border radius */
-  --photo-position-top: 0; /* Adjustable top position */
-  --photo-position-left: 0; /* Adjustable left position */
-  --glow-color: rgba(0, 0, 255, 0.6); /* Color for the glowing effect */
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
 
-  --main-color: #585857;
-  --white: #fff;
+    <link rel="stylesheet" href="mediaqueries.css" />
 
-  --shade: rgba(255, 255, 255, 0.8);
-  --black: #101010;
-  --header: #8f8f95;
-  --title-color:  crimson;  /* contact hover effect */
-  --main_theme: crimson;
-  --content-font: 'Cardo', serif;
-  --heading-font: 'Pathway Gothic One', sans-serif;
-  --timeline-width: 700px;
-  --timeline-container-width: 100%;
-
-  --first_font: "Amatic SC", sans-serif;
-
-  --d: 700ms;
-  --e: cubic-bezier(0.19, 1, 0.22, 1);
-  --font-sans: 'Rubik', sans-serif;
-  --font-serif: 'Cardo', serif;
-
-
-
-
-  --border-width: 0.1em;
-  --animation-speed: 0.5s;
-  --color: #ffffff;
-
-}
-
-body {
-  font-family: var(--font-sans);
-
-  margin: 0;
-
-  padding: 0;
-
-  background: var(--background-color);
-  color: #333;
-  min-height: 100vh;
-  background-attachment: fixed;
-
-  overflow-x: hidden; /* Prevents horizontal scrolling */
-
- 
-}
-
-
-
-
-
-/*--------scroll bar---------*/
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-
-html::-webkit-scrollbar{
-  width: 0.5rem;
-}
-
-html::-webkit-scrollbar-track{
-  background-color: var(--white);
-}
-
-html::-webkit-scrollbar-thumb{
-  background-color: var(--main_theme);
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-p {
-  color: rgb(216, 207, 207);
-}
-
-/* TRANSITION */
-
-a,
-.btn_main {
-  transition: all 300ms ease;
-}
-
-
-/* DESKTOP NAV */
-
-#desktop-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 10px;
-  text-align: center;
-  display: flex;
-  align-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  z-index: 1000;
-  width: 100%;
-  flex-direction: row;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* navbar styling */
-.navbar{
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-  padding: 30px 0;
-  font-family: 'Ubuntu', sans-serif;
-  transition: all 0.3s ease;
-}
-.navbar.sticky{
-  padding: 15px 0;
-  background: crimson;
-}
-.navbar .max-width{
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
+    <link rel="stylesheet" href="./lightbox.min.css">
+    <script src="./assets/js/lightbox-plus-jquery.min.js"></script>
+  </head>
+  <body>
+      
     
 
 
 
-.navbar .logo a{
-  color: #fff;
-  font-size: 35px;
-  font-weight: 600;
-  cursor: pointer;
-
-  text-decoration: none;
-}
-.navbar .logo a span{
-  color: crimson;
-  transition: all 0.3s ease;
-}
-.navbar.sticky .logo a span{
-  color: #fff;
-}
-.navbar .menu li{
-  list-style: none;
-  display: inline-block;
-}
-.navbar .menu li a{
-  display: block;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  margin-left: 25px;
-  transition: color 0.3s ease;
-
-  text-decoration: none;
-
-}
-.navbar .menu li a:hover{
-  color: crimson;
-  cursor: pointer;
-}
-.navbar.sticky .menu li a:hover{
-  color: #fff;
-  cursor: pointer;
-}
-
-/* menu btn styling */
-.menu-btn{
-  color: #fff;
-  font-size: 23px;
-  cursor: pointer;
-  display: none;
-}
-
-#menuToggle input {
-  display: none; /* Hide the actual checkbox */
-}
-
-
-
-
-.max-width {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.logo a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-
-
-.menu li {
-    margin: 0 15px;
-}
-
-.menu li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 5px 10px;
-    transition: color 0.3s ease;
-}
-
-.menu li a:hover {
-    color: #ff6b6b;
-}
-
-/* Hamburger menu button */
-.menu-btn {
-    display: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
-
-.drop_menu {
-  display: none;
-  }
-
-
-
-
-
-
-
-@media (max-width: 930px) {
-
-
-  .navbar .max-width {
-    display: flex; /* Keeps the flex layout for the navbar on smaller screens */
-  }
-
-  #menu {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    width: 300px;
-    margin: -100px 0 0 -50px;
-    margin-top: 0.5rem;
-
-    padding: 50px;
-    padding-top: 125px;
-    background: #0d0c0c;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-
-    /* Smooth transition for max-height, opacity, and transform */
-    transition: max-height 0.6s ease, opacity 0.6s ease, transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transform: translateX(10%);
-}
-
-/* Active state */
-#menu.active {
-margin-top: 0.5rem;
-  max-height: 500px; /* Adjust this to the height of your menu */
-    opacity: 0.9; /* 90% opacity */
-    transform: translateX(-75%); /* Slide in the menu */
-}
 
 
 
@@ -353,159 +52,28 @@ margin-top: 0.5rem;
 
 
 
-
-
+    <nav class="navbar" role="navigation">
+      <div class="max-width">
+          <div class="logo"><a href="#">Portfolio</a></div>
+          
+          <div id="menuToggle">
+              <input type="checkbox"/>
+              <span></span>
+              <span></span>
+              <span></span>
+              
+              <ul class="menu" id="menu">
+                  <li class="active menu-btn"> <a href="#about" style="--i: 0.05s">About</a></li>
+                  <li class="menu-btn"> <a href="#experience" style="--i: 0.1s">Experience</a></li>
+                  <li class="menu-btn"> <a href="#My_CV" style="--i: 0.15s">Resume</a></li>
+                  <li class="menu-btn"> <a href="#projects" style="--i: 0.2s">Projects</a></li>
+                  <li class="menu-btn"> <a href="#gallery" style="--i: 0.25s">Gallery</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
   
 
-#menuToggle
-{
-  display: block;
-  position: relative;
-
-  z-index: 1;
-  
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-
-#menuToggle a::before {
-  content: "";
-}
-
-
-#menuToggle a {
-  text-decoration: none;
-  color: var(--main_theme); /* Ensure --main_theme is defined */
-  transition: color 0.3s ease, border 0.3s ease, padding 0.3s ease; /* Add transition effects */
-  border: 2px solid transparent; /* Start with no visible border */
-  padding: 8px 12px; /* Add some padding for better spacing */
-  border-radius: 5px; /* Optional: Add a subtle border-radius */
-
-  transition: all 150ms ease-in-out;
-}
-
-
-#menuToggle:has(a:hover) a:not(:hover) {
-  filter: blur(4px);
-
-  padding: 8px 12px; /* Maintain the padding, or slightly increase it */
-  border-radius: 8px; /* Smoothly round the edges more on hover */
-}
-
-
-
-
-#menuToggle a:hover {
-  color: white;
-  border-color: var(--main_theme); /* Change the border color on hover */
-  padding: 8px 12px; /* Maintain the padding, or slightly increase it */
-  border-radius: 8px; /* Smoothly round the edges more on hover */
-}
-
-
-#menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  
-  cursor: pointer;
-  
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-  
-  -webkit-touch-callout: none;
-}
-
-/*
- * Just a quick hamburger
- */
-#menuToggle span
-{
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  
-  background: #cdcdcd;
-  border-radius: 3px;
-  
-  z-index: 1;
-  
-  transform-origin: 4px 0px;
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
-}
-
-#menuToggle span:first-child
-{
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
-}
-
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span
-{
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
- /* Sliding menu from the left */
-    .menu {
-        position: absolute;
-        width: 300px;
-        background: #ededed;
-        list-style: none;
-        transform: translateX(-100%);
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    }
-
-   
-#menu li
-{
-  padding: 10px 0;
-  font-size: 22px;
-}
-
-
-
-}
 
 
 
@@ -515,6 +83,94 @@ margin-top: 0.5rem;
 
 
 
+    <div class="parallax">
+      <img src="./assets/nebula.png" id="first">
+      <img src="./assets/moon_yellow.png" id="hawk" style="width: 10%; height: 10%;">
+      <img class="last_img" src="./assets/forest-4954825_1280.png" id="last">
+      <h1 id="text">Life as an adventure</h1>
+    
+      
+    </div>
+    
+
+
+      <div class="about_box">
+        <div class="section__text">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Libor     Zmelik</h1>
+            <p class="section__text__p2" id="job-title">CNC PROGRAMMER</p>
+
+
+                 <h2 class="section__title">
+                    Kontakt</h2>
+
+              <div class="contact_form">
+                    <a href="../cnc-web/form.html"><i class="fas fa-phone"></i>+420 728 123 456</a>
+                    <a href="../cnc-web/form.html"><i class="fas fa-envelope"></i>Bobb.Henkel@gmail.com</a>
+                    <a href="https://www.instagram.com/miakhalifa/"><i class="fab fa-instagram"></i> instagram</a>
+                    <a href='#'> <i class="fab fa-linkedin"></i> linkedIn</a>
+                 </div>
+
+
+
+
+
+
+            <div class="btn-container">
+                <button class="btn_main btn-color-2" onclick="window.open('./assets/resume-example.pdf')">
+                    Download CV
+                </button>
+                <button class="btn_main btn-color-1" onclick="location.href='./#contact'">
+                    Contact Info
+                </button>
+            </div>
+          
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<div class="shadow"></div> <!-- This div will create the shadow effect -->
+
+
+<canvas id="matrixCanvas" class="matrix-canvas"></canvas> <!-- Added class for styling -->
+
+    <section id="about">
+      <div class="section__text__p1">
+        <div class="title_2">
+            <p>about</p>
+            <h1>me</h1>
+        </div>
+    </div>
+
+
+    <div class="container">
+      <div class="box">
+          <p class="text">
+              I'm a <span class="highlight">curious</span> traveler, lifelong <span class="highlight">learner</span>, and 
+              <span class="highlight">music lover</span> with a passion for making meaningful connections. 
+              Whether I'm exploring new cities, diving into a good  book, or jamming to my latest 
+              playlist, I'm always on the <span class="highlight">lookout for the next adventure</span>—both in life and in work.
+          </p>
+
+          <p class="text">
+              When I'm not traveling the world (or dreaming about it), you'll probably find me diving 
+              deep into new skills or discovering fresh perspectives by meeting awesome people. 
+              I believe that learning should never stop, and neither should having 
+              fun while doing it!
+          </p>
+      </div>
+  </div>
+
+
+
+                
+     
+    </section>
 
 
 
@@ -522,755 +178,385 @@ margin-top: 0.5rem;
 
 
 
-/* SECTIONS */
 
-section {
-  padding-top: 4vh;
-  /*height: 96vh; */
-  margin: 0 5rem;
-  box-sizing: border-box;
-  min-height: fit-content;
 
-  background-color: transparent;
-}
+    <section id="experience">
 
-.section-container {
-  display: flex;
+      <div class="section__text__p1">
+        <div class="title_2">
+            <p>my</p>
+            <h1>experience</h1>
+        </div>
+
+
+
+
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container details-container-left border-animation">
+            <h2 class="experience-sub-title sub-title">IT - Frontend Development</h2>
+            <div class="article-container">
+              <article>
+                <div class= "border-animation__inner">
+                  <h3>HTML</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <div class= "border-animation__inner">
+                  <h3>CSS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+              
+                <div class= "border-animation__inner">
+                  <h3>JavaScript</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+
+               
+                <div class= "border-animation__inner">
+                  <h3>Material AI</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container details-container-right border-animation">
+            <h2 class="experience-sub-title sub-title">CNC Programming</h2>
+            <div class="article-container">
+              <article>
+             
+                <div class= "border-animation__inner">
+                  <h3>Heidenhain</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+             
+                <div class= "border-animation__inner">
+                  <h3>Sinumeric-840D</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <div class= "border-animation__inner">
+                  <h3>CAD/CAM Fusion 360</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <div class= "border-animation__inner">
+                  <h3>Fanuc</h3>
+                  <p>Just started</p>
+                </div>
+              </article>
+            
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="My_CV">
+      <div class="section__text__p1">
+        <div class="title_2">
+            <p>My</p>
+            <h1>RESUME</h1>
+        </div>
+    </div>
  
 
-}
-
-/* PROFILE SECTION */
-
-#profile {
-  display: flex;
-  justify-content: space-around;
-  gap: 5rem;
-  height: 80vh;
-  align-items: stretch;
-}
 
-.section__pic-container {
-  display: flex;
-  height: 1000px;
-  width: 400px;
-  margin: auto 0;
-}
-
-
-
-/* Round photo */
-.photo {
-  position: relative;
-  overflow: hidden;
-  /* Shining effect */
-  filter: brightness(1.1); /* Slight brightness for shine effect */
-  /*animation: moveUpDown 3s ease-in-out infinite;
-
-  -webkit-animation: moveUpDown 3s ease-in-out infinite;   */  
-}
-
-
-
-/* Photo image */
-.photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Animation */
-@keyframes moveUpDown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-30px); /* Adjust movement distance as needed */
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-
-
-/* Glowing animation */
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(0, 0, 255, 0.9); /* Increased glow */
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6);
-  }
-}
-
-
-
-.section__text {
-  align-self: center;
-  text-align: center;
-}
-
-.section__text p {
-  font-weight: 600;
-}
-
-.section__text__p1 {
-  text-align: center;
-}
-
-.section__text__p2 {
-  display: inline-block;
-  color:var(--main_theme);
-  overflow: hidden;
-  border-right: .15em solid orange; /* Cursor effect */
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
-}
-
-
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
-
-
-
-
-
-
-.title_2 {
-  font-size: 3rem;
-  text-align: center;
-  margin: 1rem;
-}
-
-#socials-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  gap: 1rem;
-}
-
-/* ICONS */
-
-.icon {
-  cursor: pointer;
-  height: 2rem;
-}
-
-/* BUTTONS */
-
-.btn-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.btn_main {
-  font-weight: 600;
-  transition: all 300ms ease;
-  padding: 1rem;
-  width: 8rem;
-  border-radius: 2rem;
-}
-
-.btn-color-1,
-.btn-color-2 {
-  border: rgb(225, 222, 222) 0.1rem solid;
-}
-
-.btn-color-1:hover,
-.btn-color-2:hover {
-  cursor: pointer;
-}
-
-.btn-color-1,
-.btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
-}
-
-.btn-color-1:hover {
-  background: rgb(0, 0, 0);
-}
-
-.btn-color-2 {
-  background: none;
-}
-
-.btn-color-2 {
-  color:var(--main_theme);}
-
-.btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
-}
-
-.btn-container {
-  gap: 1rem;
-}
-
-/* ABOUT SECTION */
-
-#about {
-  position: relative;
-  margin: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  flex-wrap: nowrap;
-  padding: 1rem;
-  margin: 5rem;
-  margin-top: 10rem;
-  justify-content: space-around;
-  align-items: center;
-}
-
-
-
-
-  
-  .nav-links,
-  .menu-links,
-  .contact-form-container {
-    background-color: transparent;
-  }
-
-
-
-
-.about-containers {
-  gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.about-details-container {
-  justify-content: center;
-  flex-direction: column;
-}
-
-.about-containers,
-.about-details-container {
-  display: flex;
-}
-
-
-
-
-
-
-
- /* fixed photo on background */
-.About-fixed {
-  background-attachment: fixed;
-  background-position: center;
-}
-
-
-.ImageBackgroundWrap {
-  position: relative;
-  z-index: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-
-.Background-fixed {
-  background-attachment: fixed;
-  background-position: center;
-}
-
-
-
-
-
-
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
-  background-color: var(--main-color);
-}
-
-
-.details-container,
-.color-container,
-.about_box {
-  background-color: #111;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  padding: 20px;
-  transition: all 0.1s ease-in-out; /* Smooth transition for background and border */
-  
-}
-
-
-.details-container:hover,
-.color-container:hover,
-.about_box:hover {
-  border-color: var(--border-glow);
-  box-shadow: 0 0 10px var(--border-glow);
-  
-}
-
-
-
-.details-container {
-  padding: 1.5rem;
-  flex: 1;
-  border-color: rgb(163, 163, 163);
-  text-align: center;
-  margin: 2rem;
-}
-
-
-.details-container h3 {
-  color: var(--main_theme);
-}
-
-
-
-.section-container {
-  gap: 4rem;
-  height: 80%;
-}
-
-
-
-
-.h1_section_cont {
-  text-align: center;
-  display: flex;
-  align-content: center;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-
-}
-
-
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
-
-
-
-
-
-
-
-/* ANIMATION BORDER START */
-
-
-.border-animation {
-  color: var(--color);
-  position: relative;
-  /*display: inline-block;*/
-  font-size: 1.5em;
-  line-height: 1em;
-  transform: scale(1, 0.8);
-  border: var(--border-width) solid transparent;
-}
-
-.border-animation__inner {
-  position: relative;
-  display: inline-block;
-  width: 120%;
-  font-family: 'Six Caps', sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  padding: 0.2em;
-  z-index: 1;
-  border: solid var(--border-width) transparent;
-}
-
-
-.sub-title {
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  padding: 0.2em;
-  z-index: 1;
-  border: solid var(--border-width) transparent;
-}
-
-.border-animation:focus .sub-title,
-.border-animation:hover .sub-title {
-  animation: text_color calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
-  animation-delay: calc(var(--animation-speed) / 5 * 2);
-}
-
-
-
-
-
-
-
-.border-animation:before,
-.border-animation:after {
-  content: '';
-  position: absolute;
-  background: var(--color);
-}
-
-.border-animation:focus:before,
-.border-animation:hover:before {
-  animation: beforeBorders var(--animation-speed) forwards ease-in-out;
-}
-
-.border-animation:focus:after,
-.border-animation:hover:after {
-  animation: afterBorders var(--animation-speed) forwards ease-in-out;
-}
-
-.border-animation:focus,
-.border-animation:hover {
-  animation: borderColors var(--animation-speed) steps(1) forwards;
-  outline: none;
-}
-
-.border-animation:focus .border-animation__inner,
-.border-animation:hover .border-animation__inner {
-  animation: background calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
-  animation-delay: calc(var(--animation-speed) / 5 * 2);
-}
-
-@keyframes beforeBorders {
-  0% {
-    top: calc(var(--border-width) * -1);
-    left: 50%;
-    bottom: auto;
-    right: auto;
-    width: 0;
-    height: var(--border-width);
-  }
-  33% {
-    top: calc(var(--border-width) * -1);
-    left: calc(var(--border-width) * -1);
-    bottom: auto;
-    right: auto;
-    width: calc(var(--border-width) + 5%);
-    height: var(--border-width);
-  }
-  66% {
-    top: calc(var(--border-width) * -1);
-    left: calc(var(--border-width) * -1);
-    bottom: auto;
-    right: auto;
-    width: var(--border-width);
-    height: calc((var(--border-width) * 2) + 100%);
-  }
-  100% {
-    top: auto;
-    left: calc(var(--border-width) * -1);
-    bottom: calc(var(--border-width) * -1);
-    right: auto;
-    width: calc(var(--border-width) + 1%);
-    height: calc((var(--border-width) * 2) + 100%);
-  }
-}
-
-@keyframes afterBorders {
-  0% {
-    top: calc(var(--border-width) * -1);
-    left: auto;
-    bottom: auto;
-    right: 50%;
-    width: 0;
-    height: var(--border-width);
-  }
-  33% {
-    top: calc(var(--border-width) * -1);
-    left: auto;
-    bottom: auto;
-    right: calc(var(--border-width) * -1);
-    width: calc(var(--border-width) + 5%);
-    height: var(--border-width);
-  }
-  66% {
-    top: calc(var(--border-width) * -1);
-    left: auto;
-    bottom: auto;
-    right: calc(var(--border-width) * -1);
-    width: var(--border-width);
-    height: calc((var(--border-width) * 2) + 100%);
-  }
-  100% {
-    top: auto;
-    left: auto;
-    bottom: calc(var(--border-width) * -1);
-    right: calc(var(--border-width) * -1);
-    width: calc(var(--border-width) + 1%);
-    height: calc((var(--border-width) * 2) + 100%);
-  }
-}
-
-@keyframes borderColors {
-  0% {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  33% {
-    border-top-color: var(--color);
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  66% {
-    border-top-color: var(--color);
-    border-right-color: var(--color);
-    border-bottom-color: transparent;
-    border-left-color: var(--color);
-  }
-  100% {
-    border-top-color: var(--color);
-    border-right-color: var(--color);
-    border-bottom-color: var(--color);
-    border-left-color: var(--color);
-  }
-}
-
-@keyframes background {
-  to {
-    text-shadow: 0 0.1em 0.1em #777877;
-  }
-}
-
-@keyframes text_color {
-  to {
-    text-shadow: 0 0.1em 0.1em #4d4d4d;
-    color: #b7b7b7;
-  }
-}
-
-
-@media (min-width: 850px) {
-  body {
-    justify-content: center;
-  }
-}
-
-@media (min-width: 1253px) {
-  .border-animation {
-    font-size: 1.5em;
-    line-height: 1em;
-  }
-
-}
-
-
-
-
-
-
-/* EXPERIENCE SECTION */
-
-#experience {
-  position: relative;
-  margin: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  flex-wrap: nowrap;
-  padding: 1rem;
-  margin: 5rem;
-  margin-top: 10rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.experience-sub-title {
-  color: rgb(85, 85, 85);
-  font-weight: 600;
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
-}
-
-.experience-details-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.article-container {
-  display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: flex-start;
-}
-
-
-article {
-  display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
-}
-
-article .icon {
-  cursor: default;
-}
-
-/* PROJECTS SECTION */
-
-#projects {
-  position: relative;
-}
-
-.color-container {
-  border-color: rgb(163, 163, 163);
-}
-
-.project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
-}
-
-.project-title {
-  margin: 1rem;
-  color: black;
-}
-
-.project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*=============== EXPLORE ===============*/
-.explore {
-  position: relative;
-}
-
-.explore__image {
-  position: absolute;
-  overflow: hidden;
-}
-
-.explore__img {
-  width: 100%;
-  height: 444px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.explore__shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg,
+        <div id="timeline-1" class="timeline-container">
+            <div class="timeline-header">
+                <h2 class="timeline-header__title">Fueled by Curiosity and Purpose</h2>
+                <h3 class="timeline-header__subtitle">Building My Story</h3>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-text="STEMLINGER KVF-DE">
+                  
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/cnc6.jpg" alt="Mustafa Kemal Atatürk 1881">
+                        <h2 class="timeline__content-title">04.2023-NOW</h2>
+                        <p class="timeline__content-desc">
+                          At our company, I handle <span class="highlight">programming</span> for various machinery, using systems <span class="highlight">Sinumeric D840</span>, 
+                          <span class="highlight">Heidenhain</span>, 
+                          and <span class="highlight">Fusion 360</span>. I'm in charge of setting up tools, designing fixtures for products, 
+                          testing and fine-tuning programs until I get the final part just right. I measure everything and 
+                          we send the first part for approval to our customer. Products are for the automotive industry, 
+                          high-quality standards and demanding tolerances.
+                          I am <span class="highlight">programming with R and Q parameters on Sinumeric and Heidenhain.</span>
+                           Same level of skill 
+                          on both systems. Programming for <span class="highlight">5 axis machines.</span>
+                          
+                          Parts till 40kg, from steel, cast steel, and aluminium parts till 2kg.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="Bierens, Tilburg-NL">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/technical-2.jpg" alt="Mustafa Kemal Atatürk 1893">
+                        <h2 class="timeline__content-title">07.2016-05.2024</h2>
+                        <p class="timeline__content-desc">
+                          <span class="highlight">Programming by Heidenhain 480 and I530 on 5 axis milling machine.</span> 
+                          By drawing determination of cutting tools, Production control and measurement of the product 
+                          according to the drawing. Production of large pieces. (max 10 tons)</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="Maveric, Rotterdam-NL">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/cnc7.jpg" alt="Mustafa Kemal Atatürk 1905">
+                        <h2 class="timeline__content-title">09.2013-03.2016</h2>
+                        <p class="timeline__content-desc">
+                          <span class="highlight">Piece production on 6axis CNC machine with Okuma (G codes) and Siemens 840D system.</span> 
+                          According to the drowing <span class="highlight">creating programs on the machine.</span> Correction, preparing the tools, 
+                          making setting, dettermination of cutting conditions and measuring. Machining pieces for oil industries. 
+                          Worked with materials: Stainles steel, Duplex, Hastelloy, Inconel.                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="PTD, Slavkov u Brna-CZ">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/milling-4.jpg" alt="Mustafa Kemal Atatürk 1908">
+                        <h2 class="timeline__content-title">10.2008-06.2012</h2>
+                        <p class="timeline__content-desc">
+
+                          <span class="highlight">Setting and checking</span> 
+                          compliance with <span class="highlight">technologic processes</span> throughout
+                          manufacturing. <span class="highlight">Preparing documents</span> for processing orders. <span class="highlight">Ordering necessary
+                          materials and tools for production.</span> Performing checks on raw materials before fabrication.
+                          Supervision during production and operation of machinery and equipment.
+                          <span class="highlight">Oversee the compliance with OHS.</span>
+                          Field of work: Manufacturing and industry
+                          Profession: Production planner, Setter / CNC machines programmer
+                          Country: Czech Republic  </p>
+                    </div>
+                </div>
+
+
+
+
+                <div class="timeline-item" data-text="EKOL Energo, Brno-CZ">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/cnc12.jpg" alt="Mustafa Kemal Atatürk 1916">
+                        <h2 class="timeline__content-title">09.2007-09.2008</h2>
+                        <p class="timeline__content-desc">
+                          <span class="highlight">Piece production.</span> Work on <span class="highlight">HAAS</span> CNC system and <span class="highlight">HEIDENHAIN.</span> By drawing
+                          <span class="highlight">determinations of cutting tools,</span> clamping workpieces for longer operations,
+                          <span class="highlight">correction of instruments, program checkups</span> (cutting conditions, Raids ...)
+                          loading the program from the computer (surfcam) to CNC. <span class="highlight">Production control 
+                            and measurments of the product according to the drawing.</span>
+                          Field of work: Mechanical engineering
+                          Profession: Setter / CNC machines programmer
+                          Country: Czech Republic                        </p>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <!--
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/cnc7.jpg" alt="Mustafa Kemal Atatürk 1919">
+                        <h2 class="timeline__content-title">1919</h2>
+                        <p class="timeline__content-desc">
+                            On May 19, 1919, Mustafa Kemal Pasha landed in the Black Sea port of Samsun to start the War of Independence. In defiance of the Sultan's government, he rallied a liberation army in Anatolia and convened the Congress of Erzurum and Sivas which established the basis for the new national effort under his leadership.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/cnc8.jpg" alt="Mustafa Kemal Atatürk 1920">
+                        <h2 class="timeline__content-title">1920</h2>
+                        <p class="timeline__content-desc">
+                            On April 23, 1920, the Grand National Assembly was inaugurated. Mustafa Kemal Pasha was elected to its Presidency. Fighting on many fronts, he led his forces to victory against rebels and invading armies. Following the Turkish triumph at the two major battles at Inonu in Western Turkey, the Grand National Assembly conferred on Mustafa Kemal Pasha the title of Commander-in-Chief with the rank of Marshal.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/cnc9.jpg" alt="Mustafa Kemal Atatürk 1922">
+                        <h2 class="timeline__content-title">1922</h2>
+                        <p class="timeline__content-desc">
+                            At the end of August 1922, the Turkish armies won their ultimate victory. Within a few weeks, the Turkish mainland was completely liberated, the armistice signed, and the rule of the Ottoman dynasty abolished.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/cnc10.jpeg" alt="Mustafa Kemal Atatürk 1923">
+                        <h2 class="timeline__content-title">1923</h2>
+                        <p class="timeline__content-desc">
+                            In July 1923, the national government signed the Lausanne Treaty with Great Britain, France, Greece, Italy, and others. In mid-October, Ankara became the capital of the new Turkish State. On October 29, the Republic was proclaimed and Mustafa Kemal Pasha was unanimously elected President of the Republic.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/cnc11.jpg" alt="Mustafa Kemal Atatürk 1934">
+                        <h2 class="timeline__content-title">1934</h2>
+                        <p class="timeline__content-desc">
+                            The account of Atatürk's fifteen year Presidency is a saga of dramatic modernization. With indefatigable determination, he created a new political and legal system, abolished the Caliphate and made both government and education secular, gave equal rights to women, changed the alphabet and the attire, and advanced the arts and the sciences, agriculture and industry. In 1934, when the surname law was adopted, the national parliament gave him the name <strong>Atatürk</strong> (Father of the Turks).
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="FATHER OF THE TURKS">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./assets/cnc12.jpg" alt="Mustafa Kemal Atatürk 1938">
+                        <h2 class="timeline__content-title">1938</h2>
+                        <p class="timeline__content-desc">
+                            On November 10, 1938, following an illness of a few months, the national liberator and the Father of modern Turkey died. But his legacy to his people and to the world endures.
+                        </p>
+                    </div>
+                </div>
+              -->
+
+            </div>
+        </div>
+
+    
+
+      </section>
+
+
+
+
+
+
+
+
+<!--
+          <main class="page-content">
+            <div class="card">
+              <div class="content">
+                <h2 class="title">Machine shop</h2>
+                <p class="copy">My very first project</p>
+                <button class="btn">View page</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="content">
+                <h2 class="title">Booking page</h2>
+                <p class="copy">My second project</p>
+                <button class="btn">View page</button>
+              </div>
+            </div>
+
+    footer section start 
+            <div class="card">
+              <div class="content">
+                <h2 class="title">Still in process</h2>
+                <p class="copy">There is nothing to see yet</p>
+                <button class="btn">Do not click</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="content">
+                <h2 class="title">Still in process</h2>
+                <p class="copy">There is nothing to see yet</p>
+                <button class="btn">Do not click</button>
+              </div>
+            </div>
+
+          </main>
+        </section>
+      -->
+
+
+
+
+
+
+
+      <section id="projects">
+        <div class="section__text__p1">
+        <div class="title_2">
+            <p>Browse</p>
+            <h1>my recent <span class="highlight">project</span> in - <span class="highlight">IT</span><br>(click on photo)</h1>
+        </div>
+
+
+<!--==================== POPULAR ====================-->
+<section class="popular section" id="popular">
+            
+
+  <div class="popular__container11">
+        <div class="popular__image">
+           <div class="green_h2 popular__img2">
+           <h2>CNC Machines</h2>
+           <div class="img2">
+              <a href="../cnc-web/Milling/All_milling1.html"> <img src="../portfolio/assets/CNC_machine.png" class="popular__img2">
+
+              </a>
            
-            hsla(0, 0%, 0%, 0) 40%,
-            hsla(0, 0%, 0%, 0) 60%,
-            hsl(0, 0%, 0%) 92%);
-}
-.explore__shadow2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 1%, hsla(0, 0%, 0%, 0) 2%, hsl(0, 0%, 0%) 90%);
-}
+        </div>
+        </div>
+     </div>
 
+     
 
-.explore__content {
-  position: relative;
-  padding-top: 16rem;
-  text-align: center;
-  row-gap: 2.5rem;
+        <div class="popular__image">
+           <div class="green_h2b popular__img2">
+              <h2>Booking</h2>
+              <div class="img2">
 
-  color: var(--header);
-}
+                 <a href="https://xcodecrafter.github.io/Booking_Project.github.io/"> <img src="../portfolio/assets/tiny_house.jpeg" class="popular__img2">
+                 </a>
+              </div>
+     </div>
+  </div>
 
-.explore__user {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 0.5rem;
-}
+  </div>
+</div>
+</div>
+</section>
 
 
-/*change the picture to the corner.. some kind of button*/
-.explore__perfil {
-  width: 100px;
-}
 
-.explore__name {
-  font-size: var(--small-font-size);
-  color: var(--title-color);
-}
 
 
-/*--------movement pri prejeti a odkud kam se ma text posunout padding right (rem)...---------*/
-.contact_form a {
-  color: var(--shade);
-  font-size: 1rem;
-  padding-bottom: 1rem;
-  display: flex;
-  flex-wrap: nowrap;
-  align-content: center;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 10px;
-text-decoration: none;
-  max-width: 450px;
-}
 
 
 
-.contact_form a i {
-  padding-right: 0.5rem;
-  transition: 0.2s linear;
 
-}
 
-.contact_form a:hover i {
-  padding-right: 2rem;
-  color: var(--title-color);
-}
 
 
 
@@ -1290,56 +576,15 @@ text-decoration: none;
 
 
 
-/* CONTACT */
 
-#contact {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 70vh;
-}
 
-.contact-info-upper-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
-  margin: 2rem auto;
-  padding: 0.5rem;
-}
 
-.contact-info-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
-}
 
-.contact-info-container p {
-  font-size: larger;
-}
 
-.contact-icon {
-  cursor: default;
-}
 
-.email-icon {
-  height: 2.5rem;
-}
 
-/* FOOTER SECTION */
 
-footer {
-  height: 26vh;
-  margin: 0 1rem;
-}
 
-footer p {
-  text-align: center;
-}
 
 
 
@@ -1361,14 +606,86 @@ footer p {
 
 
 
+        <section id="gallery">
+          <div class="section__text2__p1">
+          <div class="title_2">
+              <p>Photo</p>
+              <h1>galery of my other work</h1>
+          </div>
 
 
+          <div class="container_galery">
+            <div class="box_galery">
+                    <a href="./assets/1.JPEG" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_1.JPEG"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/2.JPEG" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_2.JPEG"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_22.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_22.jpg"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/3.JPG" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_3.JPG"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_4.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_4.jpg"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_5.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_5.jpg"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_7.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_7.jpg"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_8.JPG" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_8.JPG"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_9.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_9.jpg"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_10.JPG" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_10.JPG"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_11.JPG" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_11.JPG"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_12.JPG" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_12.JPG"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_13.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_13.JPG"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_14.JPG" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_14.JPG"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_15.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_15.jpg"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_16.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_16.jpg"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_17.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_17.jpg"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/IMG_18.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_18.jpg"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/batch_19.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/batch_19.jpg"></a>
+                    </div>
+                    <div class="box_galery">
+                    <a href="./assets/no_no.jpg" data-lightbox="mygallery" data-title="obrazek pole"><img src="./assets/no_no.jpg"></a>
+                    </div>
 
 
 
 
+                    </div>
+                  </div>
 
 
+                  <div class="counter">
+                  <a href="https://info.flagcounter.com/AV23"><img src="https://s11.flagcounter.com/count2/AV23/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+                  </div>
 
 
 
@@ -1400,1398 +717,50 @@ footer p {
 
 
 
-.timeline {
-  display: flex;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  flex-direction: column;
-  max-width: var(--timeline-width);
-  position: relative;
-}
 
-.timeline__content-title {
-  font-weight: normal;
-  font-size: 66px;
-  margin: -10px 0 0 0;
-  transition: 0.4s;
-  padding: 4px 10px;
-  box-sizing: border-box;
-  font-family: var(--heading-font);
-  color: #fff;
 
-}
 
-.timeline__content-desc {
-  margin: 0;
-  font-size: 20px;
-  box-sizing: border-box;
-  color:whitesmoke;
-  font-family: var(--content-font);
-  font-weight: normal;
-  line-height: 25px;
-}
 
-.timeline:before {
-  position: absolute;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  margin-left: -1px;
-  content: "";
-  background: rgba(255, 255, 255, 0.07);
-}
 
-.timeline-item {
-  padding: 40px 0;
-  opacity: 0.3;
-  filter: blur(2px);
-  transition: 0.5s;
-  box-sizing: border-box;
-  width: calc(50% - 40px);
-  display: flex;
-  position: relative;
-  transform: translateY(-80px);
-  margin: 1rem;
-}
 
-.timeline-item:before {
-  content: attr(data-text);
-  letter-spacing: 3px;
-  font-weight: 800;
-  width: 100%;
-  position: absolute;
-  color: black;
-  font-size: 25px;
-  font-family: var(--heading-font);
-  border-left: 2px solid black;
-  top: 70%;
-  margin-top: -5px;
-  padding-left: 15px;
-  opacity: 1;
-  right: calc(-100% - 56px);
 
-}
 
 
 
 
+<!-- footer section start -->
 
-.timeline-item:nth-child(even) {
-  align-self: flex-end;
-}
+<section class="footer">
+    <div class="credit"> created by <span>Libor Zmelik <br> web designer</span> | all right reserved!</div>
+</section>
 
-.timeline-item:nth-child(even):before {
-  right: auto;
-  text-align: right;
-  left: calc(-100% - 56px);
-  padding-left: 0;
-  border-left: none;
-  border-right: 2px solid rgba(255, 255, 255, 0.5);
-  padding-right: 15px;
-}
+<!-- footer section end -->
+   <!-- jQuery Library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <!-- Timeline Plugin -->
+   <script src="https://unpkg.com/scrollreveal"></script>
 
-.timeline-item--active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
-}
 
-.timeline-item--active:before {
-  top: 50%;
-  transition: 0.3s all 0.2s;
-  opacity: 1;
-}
 
-.timeline__img {
-  padding: 5px;
-  max-width: 100%;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-}
 
-.timeline-container {
-  width: var(--timeline-container-width);
-  position: relative;
-  padding: 80px 0;
-  transition: 0.3s ease 0s;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.timeline-container:before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(99, 99, 99, 0.8);
-  content: "";
-}
-
-.timeline-header {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 80px;
-  position: relative;
-}
-
-.timeline-header__title {
-  color: #fff;
-  font-size: 46px;
-  font-family: var(--content-font);
-  font-weight: normal;
-  margin: 0;
-}
-
-.timeline-header__subtitle {
-  color: rgba(255, 255, 255, 0.5);
-  font-family: var(--heading-font);
-  font-size: 16px;
-  letter-spacing: 5px;
-  margin: 10px 0 0 0;
-  font-weight: normal;
-}
-
-/* DEMO */
-.demo-footer {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.demo-footer a {
-  color: #999;
-  display: inline-block;
-  font-family: var(--content-font);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.parallax {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  padding-bottom: 50px; /* Adjust the value for desired space */
-}
-
-.parallax::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  top: 50px; /* Changed to '50px' for positioning */
-  left: 0;
-  width: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,  rgba(0, 0, 0, 0) 50%,  rgba(0, 0, 0, 0.3) 20%, #000 100%);
-  height: 1400px;
-  z-index: 20;
-}
-
-/*-------- Images --------*/
-.parallax img {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-#first {
-  object-fit: cover;
-}
-
-.last_img {
-  width: 100%;
-  height: auto;
-  max-height: 100vh;
-  position: relative;
-  top: 200px;
-}
-
-#last {
-  z-index: 10;
-}
-
-#text {
-  position: relative;
-  color: white;
-  z-index: 2;
-  font-size: 3em;
-  text-align: left;
-  padding-top: 45px;
-  letter-spacing: 12px;
-  margin-left: 3rem;
-
-  margin-top: 4rem;
-
-}
-
-#hawk {
-  margin-top: 150px;
-  position: absolute;
-  left: 80%;  
-  z-index: 2;
-  width: 10vw !important;
-  height: auto !important;
+   <script>
+    let first = document.getElementById("first");
+    let hawk = document.getElementById("hawk");
+    let last = document.getElementById("last");
+    let text = document.getElementById("text");
   
-}
-
-/*-------- Content Box --------*/
-.about_box {
-  position: absolute;
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Center the box */
-  width: 100vw;
-  height: 100vh;
-max-width: 350px;
-
-  margin-top: 20px;
-
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-  border-radius: 10px;
-  color: white;
-  z-index: 30;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Optional shadow */
-  border: 1px solid #ccc;
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Center vertically */
-  margin: 2rem;
-  max-height: 400px;
-  margin-bottom: 2rem;
-
-}
-
-
-.about_box_2 {
-  position: absolute;
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Center the box */
-
-  margin-top: 20px;
-
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-  border-radius: 10px;
-  color: white;
-  z-index: 30;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Optional shadow */
-  border: 1px solid #ccc;
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Center vertically */
-  margin: 2rem;
-  max-height: 400px;
-  margin-bottom: 2rem;
-}
-
-
-
-  .container {
-    display: flex;
-    justify-content: center; /* Horizontally centers the content */
-    align-items: center; /* Vertically centers the content */
-    flex-wrap: wrap; /* Allows content to wrap if needed */
-    padding: 5rem 0; /* Padding inside the container */
-    background: #111; /* Background color */
-    cursor: pointer; /* Changes cursor on hover */
-    border: 1px solid #ccc; /* Border around the container */
-    border-radius: 8px; /* Rounded corners */
-     max-width: 150vw; /* Ensures the container does not exceed the viewport width */
-    max-height: 100vh; /* Ensures the container does not exceed the viewport height */
-    box-sizing: border-box; /* Ensures padding and border are included in width and height */
-    overflow: hidden; /* Prevents content from spilling outside the container */
-
-}
-
-
-
-.container .box
-{
-  position: relative;
-  width: 320px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 30px;
-  transition: 0.5s;
-  flex-direction: column;
-    
-}
-
-
-
-
-.container .box .content
-{
-    position: relative;
-    left: 0;
-    padding: 20px 40px;
-    background:rgba(255, 255, 255, 0.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    backdrop-filter: blur(10ox);
-    z-index: 1;
-    transition: 0.5s;
-    color: #fff;
-
-}
-.container .box:hover .content
-{
-    left: -25px;
-    padding:60px 40px ;
-}
-.container .box .content h2
-{
-    font-size: 2em;
-    color: #fff;
-    margin-bottom: 10px;
-}
-.container .box .content p
-{
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    line-height: 1.4em;
-    padding: 12px;
-}
-.container .box .content a
-{
-    display: inline-block;
-    font-size: 1.1em;
-    color: #111;
-    background: #fff;
-    padding: 10px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 700;
-    margin-top: 5px;
-}
-.container .box span
-{
- 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 50;
-    pointer-events: none;
+    window.addEventListener('scroll', function(){
+        var value = window.scrollY;
   
-}
-.container .box span::before
-{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px ;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transition: 0.5s;
-    animation: animate 2s ease-in-out infinite;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 05);
-}
-.container .box:hover #first::before 
-{
-    top: -50px;
-    left: 50px;
-    width: 100px;
-    height: 100px;  
-    opacity: 1;
-    background: url("https://cdn.icon-icons.com/icons2/2334/PNG/512/pen_tool_anchor_point_design_icon_142354.png") no-repeat;
-    background-size: 100px;
-    background-position: center;
-    filter:invert(100%);
-}
+        first.style.top = value * 0.7 + 'px';
+        hawk.style.top =  value * 0.5 + 'px';  // Updated to move down
+        last.style.bottom = value * 0.5 + 'px';
+        text.style.top = value * 1 + 'px';
+    });
+  </script>
 
-.container .box span::after
-{
-    content: '';
-    position: absolute;
-    bottom:  0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px ;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transition: 0.5s;
-    animation: animate 2s ease-in-out infinite;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 05);
-    animation-delay: -1s;
-}
 
-@keyframes animate
-{
-    0%,100%
-    {
-        transform: translateY(10px);
-    }
-    50%
-    {
-        transform: translateY(-10px);
-    }
-}
+   <script src="script.js"></script>
 
-
-
-
-.title_2 h1 {
-  font-size: 1.5em;
-color: #ccc;
-font-family: var(--first_font);
-
-}
-
-.title_2 p {
-  font-size: 1.5em;
-color: #ccc;
-font-family: var(--first_font);
-font-weight: 400;
-
-}
-
-.section__text__p1 {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  flex-wrap: nowrap;
-  margin: 1rem;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-.section__text2__p1 {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  flex-wrap: nowrap;
-  margin: 1rem;
-  justify-content: space-evenly;
-  align-items: stretch;
-}
-
-
-
-
-.highlight {
-  color:var(--main_theme);
-  font-weight: bold;
-  position: static !important;
-}
-
-
-
-.text {
-  font-size: 2em;
-  padding: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-    font-family: var(--first_font);
-    font-weight: normal;
-    line-height: 25px;
-    z-index: 100;
-}
-
-
-
-
-
-
-.content-header {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.content-name {
-  font-size: 1.2em;
-  margin-bottom: 15px;
-}
-
-.content-text {
-  font-size: 1em;
-  line-height: 1.5;
-}
-
-
-
-
-
-
-
-
-/*--------lista uplne dole FB...---------*/
-
-
-
-.footer {
-  .footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 3rem;
-    background-color: #000;
-    background-position: center;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-}
-
-.footer h3 {
-  color: var(--white);
-  font-size: 2.5rem;
-  padding-bottom: 2rem;
-}
-/*--------movement pri prejeti a odkud kam se ma text posunout padding right (rem)...---------*/
-
-.footer a {
-  color: var(--light-white);
-  font-size: 1.5rem;
-  padding-bottom: 1.5rem;
-  display: block;
-}
-
-.footer a i {
-  color: var(--main_theme);
-  padding-right: 0.5rem;
-  transition: 0.2s linear;
-}
-
-.footer:hover i {
-  padding-right: 2rem;
-}
-
-.footer .credit {
-text-align: center;
-padding-top: 3rem;
-margin-top: 3rem;
-border-top: 0.1rem solid var(--light-white);
-font-size: 3rem;
-color: var(--white);
-font-family: var(--first_font);
-
-font-weight: 700;
-
-}
-
-.footer .credit span {
-  color: var(--main_theme);
-  font-family: var(--first_font);
-font-weight: 700;
-  font-size: 3rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* CONTENT CARD PART */
-
-.page-content {
-  display: grid;
-  grid-gap: 6rem;
-  padding: 1rem;
-  max-width: 1024px;
-  margin: 0 auto;
-  font-family: var(--font-sans);
-}
-
-
-
-@media (min-width: 600px) {
-  .page-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .card {
-    height: 350px;
-  }
-
-
-
-
-}
-
-@media (min-width: 800px) {
-  .page-content {
-    grid-template-columns: repeat(2, 1fr);  /*(PRO 4 KARTY COPY TOHLE...-->)  grid-template-columns: repeat(4, 1fr); */
-  }
-
-}
-
-
-@media (min-width: 930px) {
-  .navbar .max-width {
-    display: flex; /* Ensures the menu is displayed with flex layout on larger screens */
-  }
-  
-  #menu {
-    display: flex; /* Shows the menu on screens larger than 930px */
-  }
-  
-  
-}
-
-
-@media screen and (max-width: 1200px) {
-  .popular__container11 {
-    width: 1000px !important;
-
-  }
-}
-
-
-
-
-
-
-@media screen and (max-width: 1023px) {
-  .green_h2b h2 {
-    font-size: 2rem;
-    
-    }
-  
-  
-    .popular__container11 {
-      display: flex;
-      gap: 1px;
-      align-content: space-between;
-      flex-direction: row;
-      align-items: stretch;
-      row-gap: 2.5rem;
-      margin: 3px;
-      padding: 3rem;
-      box-shadow: rgb(44 88 141 / 25%) 0px 54px 55px, rgb(41 46 152 / 12%) 0px -12px 30px, rgb(39 22 118 / 12%) 0px 4px 6px, rgb(61 61 73 / 17%) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-      width: 750px !important;
-      justify-content: space-evenly !important;
-  
-  }
-  
-  
-  
-  
-  }
-  
-  
-  
-
-
-@media (max-width: 1050px) {
-  .about_box {
-    left: 45% !important;
-
-  }
-}
-
-@media (max-width: 900px) {
-  .about_box {
-    left: 30% !important;
-
-  }
-}
-
-@media (max-width: 800px) {
-.about_box {
-  left: 30% !important;
-}
-
-
-.popular__container11 {
-  display: flex;
-  gap: 1px;
-  align-content: space-around;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: space-around;
-  row-gap: 2.5rem;
-  margin: 3px;
-  padding: 3rem;
-  box-shadow: rgb(44 88 141 / 25%) 0px 54px 55px, rgb(41 46 152 / 12%) 0px -12px 30px, rgb(39 22 118 / 12%) 0px 4px 6px, rgb(61 61 73 / 17%) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  width: 550px !important;
-  flex-wrap: nowrap !important;
-}
-
-
-
-
-}
-
-@media (max-width: 600px) {
- 
-.footer .credit {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.footer .credit span {
-  font-weight: 600;
-  font-size: 1.5rem;
-}
-
-#text {
-  font-size: 2em;
-  text-align: left;
-  padding-top: 45px;
-  letter-spacing: 12px;
-  margin-left: 3rem;
-
-  margin-top: 4rem;
-
-}
-
-.parallax img {
-  position: absolute;
-  left: 0;
-  width: 200%;
-  height: 100%;
-  pointer-events: none;
-}
-
-
-
-
-.popular__container11 {
-  width: 350px !important;
-
-}
-
-
-
-
-
-}
-
-
-
-
-@media (max-width:450px) {
-  .about_box {
-      left: 5% !important;
-  }
-
-  .timeline__img {
-    max-width: 120%;
-}
-
-
-
-.timeline__content-title {
-  font-weight: normal;
-  font-size: 40px;
-  margin: -10px 0 0 0;
-  padding: 0 10px;
-}
-
-.timeline__content-desc {
-  margin: auto;
-  padding: 20px;
-
-  width: 250px;
-}
-
-.timeline {
-  display: flex;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: flex-start;
-}
-
-
-
-.timeline-item:before {
-  top: -3% !important;
-  margin-top: -5px;
-  padding-left: 15px;
-  right: calc(-70% - 60px);
-}
-
-
-.timeline-item:nth-child(even):before {
-  top: -3% !important;
-
-  text-align: right;
-  left: calc(50% - 66px);
-  padding-left: 0;
-  padding-right: 15px;
-
-
-}
-
-
-
-
-
-
-}
-
-
-
-
-#about {
-display: flex;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: nowrap;
-    padding: 1rem;
-    margin: 5rem;
-    margin-top: 10rem;
-    justify-content: space-around;
-    align-items: center;
-
-}
-
-
-
-
-.card {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  padding: 1rem;
-  width: 100%;
-  text-align: center;
-  color: whitesmoke;
-  background-color: whitesmoke;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.1), 0 4px 4px rgba(0,0,0,0.1), 0 8px 8px rgba(0,0,0,0.1), 0 16px 16px rgba(0,0,0,0.1);
-}
-
-
-.card:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 110%;
-  background-size: cover;
-  background-position: 0 0;
-  transition: transform calc(var(--d) * 1.5) var(--e);
-  pointer-events: none;
-}
-
-.card:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  pointer-events: none;
-  background-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.009) 11.7%, hsla(0, 0%, 0%, 0.034) 22.1%, hsla(0, 0%, 0%, 0.072) 31.2%, hsla(0, 0%, 0%, 0.123) 39.4%, hsla(0, 0%, 0%, 0.182) 46.6%, hsla(0, 0%, 0%, 0.249) 53.1%, hsla(0, 0%, 0%, 0.320) 58.9%, hsla(0, 0%, 0%, 0.394) 64.3%, hsla(0, 0%, 0%, 0.468) 69.3%, hsla(0, 0%, 0%, 0.540) 74.1%, hsla(0, 0%, 0%, 0.607) 78.8%, hsla(0, 0%, 0%, 0.668) 83.6%, hsla(0, 0%, 0%, 0.721) 88.7%, hsla(0, 0%, 0%, 0.762) 94.1%, hsla(0, 0%, 0%, 0.790) 100%);
-  transform: translateY(-50%);
-  transition: transform calc(var(--d) * 2) var(--e);
-}
-
-.card:nth-child(1):before {
-  background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
-}
-
-.card:nth-child(2):before {
-  background-image: url(https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
-}
-
-.card:nth-child(3):before {
-  background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
-}
-
-.card:nth-child(4):before {
-  background-image: url(https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
-}
-
-.content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 1rem;
-  transition: transform var(--d) var(--e);
-  z-index: 1;
-}
-
-.content > * + * {
-  margin-top: 1rem;
-}
-
-.title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.copy {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  font-style: italic;
-  line-height: 1.35;
-}
-
-.btn {
-  cursor: pointer;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.65rem;
-  font-weight: bold;
-  letter-spacing: 0.025rem;
-  text-transform: uppercase;
-  color: white;
-  background-color: black;
-  border: none;
-}
-
-.btn:hover {
-  background-color: #262626;
-}
-
-.btn:focus {
-  outline: 1px dashed yellow;
-  outline-offset: 3px;
-}
-
-@media (hover: hover) and (min-width: 600px) {
-  .card:after {
-    transform: translateY(0);
-  }
-
-  .content {
-    transform: translateY(calc(100% - 4.5rem));
-  }
-
-  .content > *:not(.title) {
-    opacity: 0;
-    transform: translateY(1rem);
-    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
-  }
-
-  .card:hover,
-  .card:focus-within {
-    align-items: center;
-  }
-
-  .card:hover:before,
-  .card:focus-within:before {
-    transform: translateY(-4%);
-  }
-
-  .card:hover:after,
-  .card:focus-within:after {
-    transform: translateY(-50%);
-  }
-
-  .card:hover .content,
-  .card:focus-within .content {
-    transform: translateY(0);
-  }
-
-  .card:hover .content > *:not(.title),
-  .card:focus-within .content > *:not(.title) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: calc(var(--d) / 8);
-  }
-
-  .card:focus-within:before,
-  .card:focus-within:after,
-  .card:focus-within .content,
-  .card:focus-within .content > *:not(.title) {
-    transition-duration: 0s;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* GALERY */
-
-
-.container_galery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-  grid-gap: 1.7rem;
-  align-items: center;
-  align-content: space-around;
-  justify-items: center;
-  justify-content: center;
-}
-
-
-
-.box_galery {
-  height: 250px;
-width: 250px;
-  border-radius: 10px;
-overflow: hidden;
-background: gray;
-transition: all 0.8s;
-cursor: pointer;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 50;
-
-}
-
-/*
-height: 250px;
-width: 250px;
-  border-radius: 10px;
-overflow: hidden;
-background: gray;
-transition: all 0.8s;
-cursor: pointer;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 50;
-*/
-
-
-
-
-.bobox:hover {
-  transform: translateY(20px);
-  transition: all 0.5s ease;
-  opacity: 0.6;
-}
-
-.box_galery:hover {
-  filter: grayscale(100%);
-  transform: scale(1.1);
-}
-
-
-.in {
-  position: absolute;
-  bottom: 20px;
-  color: white;
-  font-size: 22px;
-  letter-spacing: 1px;
-}
-
-.bottom {
-  text-align: center;
-  color: #adb5bd;
-  padding-top: 150px;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-
-
-
-.gallery {
-  margin: 10px 50px;
-}
-
-.gallery img {
-  transition: 1s;
-  padding: 15px;
-  width: 20px;
-
-}
-
-.gallery img:hover {
-  filter: grayscale(100%);
-  transform: scale(1.1);
-}
-
-
-.counter {
-  margin: 2rem;
-  padding-top: 3rem;
-  padding: 2rem;
-
-}
-
-
-
-
-
-
-
-
-
-/*=============== POPULAR ===============*/
-
-.popular__container {
-  padding-top: 1.5rem;
-  grid-template-columns: 240px;
-  justify-content: center;
-  row-gap: 2.5rem;
-}
-
-
-.popular__container11 {
-  display: flex;
-    gap: 1px;
-    align-content: space-between;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-around;
-    row-gap: 2.5rem;
-    margin: 3px;
-    padding: 3rem;
-    box-shadow: rgb(44 88 141 / 25%) 0px 54px 55px, rgb(41 46 152 / 12%) 0px -12px 30px, rgb(39 22 118 / 12%) 0px 4px 6px, rgb(61 61 73 / 17%) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    width: 1200px;
-}
-
-
-
-
-
-
-.popular__image {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-
-
-
-
-
-.popular__img {
-  transition: transform 0.4s;
-}
-
-.popular__img2 {
-  transition: transform 0.4s;
-  justify-content: space-around;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  width: 300px;
-}
-
-.popular__shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg,
-              hsla(0, 0%, 0%, 0) 50%,
-              hsl(0, 0%, 0%) 125%);
-}
-
-.popular__title {
-  font-size: var(--h3-font-size);
-  margin-bottom: 0.5rem;
-}
-
-.popular__location {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 0.25rem;
-  font-size: var(--small-font-size);
-  font-family: var(--second-font);
-  font-weight: 500;
-}
-
-.popular__location i {
-  font-size: 1rem;
-}
-
-.popular__image:hover .popular__img {
-  transform: scale(1.2);
-}
-
-.popular__image:hover .popular__img2 {
-  transform: scale(1.2);
-}
-
-
-
-.green_h2b h2{
-  padding: 1rem;
-  margin: 1rem;
-  color: #8e44ad;
-  font-size: 2rem;
-  text-shadow: 1px 1px #f1f2f598;
-  text-transform: none;
-  text-align: left;
-}
-
-
-.green_h2 h2{
-  padding: 1rem;
-  margin: 1rem;
-  color: #337ab7;
-  font-size: 2rem;
-  text-shadow: 1px 1px #f1f2f598;
-  text-transform: none;
-  text-align: left;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Matrix canvas style */
-#matrixCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1; /* Places the canvas behind other content */
-  background-color: black;
-}
-
-.matrix-canvas {
-  margin-top: 50px; /* Adjust the value to your desired space */
-  display: block;    /* Ensure it occupies space correctly */
-}
-
-
-/* Adjustable top margin for sections */
-:root {
-  --content-top-offset: 100px; /* Change this value to adjust the top offset of content */
-}
-
-/* Main content styling */
-section {
-  position: relative;
-  z-index: 1;
-  color: white;
-  padding: 20px;
-  margin-top: var(--content-top-offset); /* Adjustable margin on top */
-}
-
-/* Example styles for the 'about' and 'experience' sections */
-.section__text__p1, .container, .experience-details-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-
-
-
-.shadow {
-    position: absolute;              /* Position it absolutely */
-    top: -30;                      /* Align to the bottom */
-    left: 0;                        /* Align to the left */
-    width: 100%;                    /* Full width */
-    height: 8rem;                  /* Fixed height */
-    background-color: #000;         /* Dark background color */
-    padding-bottom: 3rem;              /* Add padding to accommodate the border */
-    box-shadow: 0 0 20px rgba(47, 46, 46, 0.5); /* Shadow effect */
-    overflow: hidden;                 /* Hide overflow to keep the border contained */
-    z-index: 2;                     /* Ensure it's above other content */
-}
-
+  </body>
+</html>
