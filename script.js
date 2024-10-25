@@ -205,7 +205,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -255,9 +254,9 @@ function drawMatrix() {
     // Reset drop position if it goes below the canvas
     if (y > canvas.height && Math.random() > 0.975) {
       drops[i] = 0; // Reset to the top
+    } else {
+      drops[i]++; // Increment drop position
     }
-
-    drops[i]++; // Increment drop position
   }
 }
 
@@ -266,19 +265,23 @@ const matrixInterval = setInterval(drawMatrix, 100); // Slower animation
 
 // Adjust canvas on window resize
 window.addEventListener('resize', () => {
-  // Save the current state of drops
-  const currentDrops = [...drops];
-
   // Update canvas dimensions
   canvas.width = window.innerWidth; 
   canvas.height = window.innerHeight; 
 
   // Recalculate columns and adjust the drops array
   const newColumns = Math.floor(canvas.width / fontSize);
-  drops.length = newColumns; // Update drops array length
+  const newDrops = Array(newColumns).fill(1); // Create a new drops array
 
-  // Fill the new drops with existing values to maintain state
-  for (let i = 0; i < newColumns; i++) {
-    drops[i] = currentDrops[i] !== undefined ? currentDrops[i] : 1; // Maintain existing drop position if available
+  // Transfer old drop positions to the new drops array if within bounds
+  for (let i = 0; i < Math.min(newColumns, drops.length); i++) {
+    newDrops[i] = drops[i]; // Copy over the previous positions
+  }
+
+  // Replace the old drops with the new drops
+  drops.length = newColumns; // Update drops array length
+  for (let i = 0; i < newDrops.length; i++) {
+    drops[i] = newDrops[i]; // Fill with previous positions or reset to 1 if not available
   }
 });
+
