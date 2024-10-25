@@ -202,36 +202,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const customText = `G91
-D1
-G90
-G40
-G0 
-X0 
-Y0
-G41
-G1 
-AP
-RP
-G3 
-AP
-RP 
-TURN
-G40
-G0
-IC(1)
-IF
-R602 
-GOTOF 
-ENDIF:`;
-const fontSize = 10;
+const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ;= ():-';
+const fontSize = 16;
 const columns = canvas.width / fontSize;
 const drops = Array(Math.floor(columns)).fill(1);
 
@@ -242,14 +219,12 @@ function drawMatrix() {
   ctx.fillStyle = '#00FF00';
   ctx.font = `${fontSize}px monospace`;
 
-  
-    // Loop through the drops
-    for (let i = 0; i < drops.length; i++) {
-        const text = customText.split('\n')[Math.floor(Math.random() * customText.split('\n').length)]; // Random line from customText
-        const x = i * fontSize; // Calculate x position
-        const y = drops[i] * fontSize; // Calculate y position
-        ctx.fillText(text, x, y); // Draw the text
+  for (let i = 0; i < drops.length; i++) {
+    const char = characters[Math.floor(Math.random() * characters.length)];
+    const x = i * fontSize;
+    const y = drops[i] * fontSize;
 
+    ctx.fillText(char, x, y);
 
     if (y > canvas.height && Math.random() > 0.975) {
       drops[i] = 0;
@@ -266,3 +241,4 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
   drops.fill(1);
 });
+
