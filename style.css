@@ -2759,25 +2759,11 @@ z-index: 50;
 }
 
 
-/* Adjustable top margin for sections */
-:root {
-  --content-top-offset: 100px; /* Change this value to adjust the top offset of content */
-}
-
 /* Main content styling */
 section {
-  position: relative;
   z-index: 1;
-  color: white;
-  padding: 20px;
-  margin-top: var(--content-top-offset); /* Adjustable margin on top */
 }
 
-/* Example styles for the 'about' and 'experience' sections */
-.section__text__p1, .container, .experience-details-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
 
 
 
