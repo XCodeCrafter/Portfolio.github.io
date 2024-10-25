@@ -200,6 +200,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+
+
+
+
+
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -239,13 +245,12 @@ function drawMatrix() {
   ctx.fillStyle = '#00FF00'; // Matrix text color
   ctx.font = `${fontSize}px monospace`; // Set font
 
-    // Loop through the drops
-    for (let i = 0; i < drops.length; i++) {
-        const text = customText.split('\n')[Math.floor(Math.random() * customText.split('\n').length)]; // Random line from customText
-        const x = i * fontSize; // Calculate x position
-        const y = drops[i] * fontSize; // Calculate y position
-        ctx.fillText(text, x, y); // Draw the text
-
+  // Loop through the drops
+  for (let i = 0; i < drops.length; i++) {
+    const text = customText.split('\n')[Math.floor(Math.random() * customText.split('\n').length)]; // Random line from customText
+    const x = i * fontSize; // Calculate x position
+    const y = drops[i] * fontSize; // Calculate y position
+    ctx.fillText(text, x, y); // Draw the text
 
     // Reset drop position if it goes below the canvas
     if (y > canvas.height && Math.random() > 0.975) {
@@ -257,15 +262,23 @@ function drawMatrix() {
 }
 
 // Start the animation
-const matrixInterval = setInterval(drawMatrix, 50);
+const matrixInterval = setInterval(drawMatrix, 100); // Slower animation
 
 // Adjust canvas on window resize
 window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth; // Update canvas width
-  canvas.height = window.innerHeight; // Update canvas height
-  // Recalculate columns and reset drops
+  // Save the current state of drops
+  const currentDrops = [...drops];
+
+  // Update canvas dimensions
+  canvas.width = window.innerWidth; 
+  canvas.height = window.innerHeight; 
+
+  // Recalculate columns and adjust the drops array
   const newColumns = Math.floor(canvas.width / fontSize);
   drops.length = newColumns; // Update drops array length
-  drops.fill(1); // Reset drops
-});
 
+  // Fill the new drops with existing values to maintain state
+  for (let i = 0; i < newColumns; i++) {
+    drops[i] = currentDrops[i] !== undefined ? currentDrops[i] : 1; // Maintain existing drop position if available
+  }
+});
