@@ -205,12 +205,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas.getContext('2d');
+
+// Set initial canvas dimensions
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// Define the characters to be displayed
+// Define the text to display
 const customText = `G91
 D1
 G90
@@ -233,55 +236,62 @@ IF
 R602 
 GOTOF 
 ENDIF:`;
-const fontSize = 14;
-const columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(1); // Initialize drops
 
+// Set base font size
+let fontSize = window.innerWidth < 800 ? 10 : 14;
+let columns = Math.floor(canvas.width / fontSize);
+const drops = Array(columns).fill(1); // Initialize drops array
+
+// Function to draw matrix animation
 function drawMatrix() {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Background with slight opacity
-  ctx.fillRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+  // Set background with slight opacity to create trailing effect
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = '#00FF00'; // Matrix text color
-  ctx.font = `${fontSize}px monospace`; // Set font
+  // Set text color and font style
+  ctx.fillStyle = '#00FF00';
+  ctx.font = `${fontSize}px monospace`;
 
-  // Loop through the drops
+  // Loop through drops
   for (let i = 0; i < drops.length; i++) {
-    const text = customText.split('\n')[Math.floor(Math.random() * customText.split('\n').length)]; // Random line from customText
-    const x = i * fontSize; // Calculate x position
-    const y = drops[i] * fontSize; // Calculate y position
-    ctx.fillText(text, x, y); // Draw the text
+    const text = customText.split('\n')[Math.floor(Math.random() * customText.split('\n').length)];
+    const x = i * fontSize;
+    const y = drops[i] * fontSize;
 
-    // Reset drop position if it goes below the canvas
+    ctx.fillText(text, x, y);
+
+    // Reset drop position if it goes off-canvas
     if (y > canvas.height && Math.random() > 0.975) {
-      drops[i] = 0; // Reset to the top
+      drops[i] = 0;
     } else {
-      drops[i]++; // Increment drop position
+      drops[i]++;
     }
   }
 }
 
-// Start the animation
-const matrixInterval = setInterval(drawMatrix, 100); // Slower animation
+// Animation interval for matrix effect
+const matrixInterval = setInterval(drawMatrix, 100);
 
-// Adjust canvas on window resize
+// Adjust canvas and font size on resize without disrupting animation
 window.addEventListener('resize', () => {
-  // Update canvas dimensions
-  canvas.width = window.innerWidth; 
-  canvas.height = window.innerHeight; 
+  // Adjust font size for smaller screens
+  fontSize = window.innerWidth < 800 ? 10 : 14;
 
-  // Recalculate columns and adjust the drops array
+  // Update canvas size
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // Recalculate columns based on new width
   const newColumns = Math.floor(canvas.width / fontSize);
-  const newDrops = Array(newColumns).fill(1); // Create a new drops array
 
-  // Transfer old drop positions to the new drops array if within bounds
-  for (let i = 0; i < Math.min(newColumns, drops.length); i++) {
-    newDrops[i] = drops[i]; // Copy over the previous positions
+  // Adjust drops array to maintain continuity
+  if (newColumns > columns) {
+    // Add new drops if columns increase
+    drops.push(...Array(newColumns - columns).fill(1));
+  } else if (newColumns < columns) {
+    // Remove drops if columns decrease
+    drops.length = newColumns;
   }
 
-  // Replace the old drops with the new drops
-  drops.length = newColumns; // Update drops array length
-  for (let i = 0; i < newDrops.length; i++) {
-    drops[i] = newDrops[i]; // Fill with previous positions or reset to 1 if not available
-  }
+  columns = newColumns; // Update columns count
 });
-
