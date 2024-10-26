@@ -2699,7 +2699,7 @@ z-index: 50;
 .green_h2b h2{
   padding: 1rem;
   margin: 1rem;
-  color: #8e44ad;
+  color: #fff;
   font-size: 2rem;
   text-shadow: 1px 1px #f1f2f598;
   text-transform: none;
@@ -2710,7 +2710,7 @@ z-index: 50;
 .green_h2 h2{
   padding: 1rem;
   margin: 1rem;
-  color: #337ab7;
+  color: #fff;
   font-size: 2rem;
   text-shadow: 1px 1px #f1f2f598;
   text-transform: none;
