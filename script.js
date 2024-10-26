@@ -180,23 +180,6 @@ $(document).ready(function() {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  ScrollReveal().reveal('.details-container-right', {
-    origin: 'right',
-    distance: '200px',
-    duration: 2000,
-    delay: 600,
-    easing: 'ease-in-out'
-  });
-
-  ScrollReveal().reveal('.details-container-left', {
-    origin: 'left',
-    distance: '200px',
-    duration: 2000,
-    delay: 600,
-    easing: 'ease-in-out'
-  });
-});
 
 
 
@@ -269,6 +252,9 @@ GOTOF
 ENDIF:`;
 const letters = customText.split(/\r?\n/); // Split by new line to create an array of lines
 
+// Track the first appearance of words in each column
+let firstAppearance = Array(columns).fill(false);
+
 // Draw function
 function draw() {
   ctx.fillStyle = 'rgba(0, 0, 0, .1)';
@@ -277,17 +263,23 @@ function draw() {
   for (var i = 0; i < drops.length; i++) {
     // Choose a random line from custom text
     var text = letters[Math.floor(Math.random() * letters.length)];
-    ctx.fillStyle = '#0f0';
+    ctx.fillStyle = firstAppearance[i] ? '#0f0' : '#f5f5f0'; // Highlight the first appearance
+
     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+    // Mark the first appearance
+    if (!firstAppearance[i] && drops[i] * fontSize < canvas.height) {
+      firstAppearance[i] = true; // Set first appearance to true
+    }
 
     // Reset or increment drop position
     drops[i]++;
     if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
       drops[i] = 0;
+      firstAppearance[i] = false; // Reset the first appearance when it drops off
     }
   }
 }
 
 // Loop the animation
 setInterval(draw, 100);
-
