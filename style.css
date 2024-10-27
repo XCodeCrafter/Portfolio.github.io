@@ -2571,3 +2571,38 @@ z-index: 50;
     z-index: 2;                     /* Ensure it's above other content */
 }
 
+
+
+
+
+
+
+
+/*=============== SCROLL UP ===============*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: hsla(0, 0%, 0%, 0.1);
+  padding: 6px;
+  display: inline-flex;
+  color: crimson;
+  font-size: 1.5rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* for safary */
+  z-index: 10;
+  transition: bottom 0.4s, transform 0.4s;
+}
+
+.scrollup:hover {
+  transform: translateY(-0.25rem);
+}
+
+/* Show Scroll Up */
+.show-scroll {
+  bottom: 3rem;
+}
+
+
+
+
